@@ -7,6 +7,11 @@ class SheltersController < ApplicationController
     @shelter = Shelter.find(params[:id])
   end
 
+  def show_pets
+    shelter_name = Shelter.find(params[:id]).name
+    @pets_at_shelter = Pet.where(sheltered_at:"#{shelter_name}")
+  end
+
   def new
   end
 
