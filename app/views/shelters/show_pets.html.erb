@@ -1,4 +1,4 @@
-<h2> Pets Index </h2>
+<h2> <%= @shelter.name %> - ID:<%= @shelter.id %> <br> Pets Index </h2>
 
 <% @pets_at_shelter.each do |pet| %>
   <p> <% pet.image %> <br>

@@ -3,5 +3,5 @@ class PetsController < ApplicationController
     @pets = Pet.all
   end
 
-  
+
 end
