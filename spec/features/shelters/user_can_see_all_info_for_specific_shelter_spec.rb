@@ -8,7 +8,11 @@ RSpec.describe "shelter id page", type: :feature do
                              city: "Denver",
                             state: "CO",
                               zip: "80203")
-    visit 'shelters/1'
+    visit 'shelters/'
+
+    click_on 'Shelter Info'
+
+    expect(current_path).to eq("/shelters/#{shelter_1.id}")
 
     expect(page).to have_content(shelter_1.id)
     expect(page).to have_content(shelter_1.name)

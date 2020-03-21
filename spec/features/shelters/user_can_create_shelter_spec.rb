@@ -18,7 +18,9 @@ RSpec.describe 'Create New Shelter' do
         fill_in 'Zip', with: '80203'
         click_on 'Create Shelter'
 
-        expect(current_path).to eq("/shelters")
+        new_shelter = Shelter.last
+
+        expect(current_path).to eq("/shelters/#{new_shelter.id}")
         expect(page).to have_content('Megan')
       end
     end

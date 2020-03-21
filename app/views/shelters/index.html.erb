@@ -2,7 +2,7 @@
 
 <% @shelters.each do |shelter| %>
   <h2><%= shelter.name %></h2>
-  <p>City: <%= shelter.city %></p>
-<% end %>
+  <%= link_to 'Shelter Info', "/shelters/#{shelter.id}" %>
+<% end %><br>
 
  <%= link_to 'Create Shelter', '/shelters/new' %>
