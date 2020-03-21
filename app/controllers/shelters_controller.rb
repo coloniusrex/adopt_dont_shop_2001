@@ -8,17 +8,30 @@ class SheltersController < ApplicationController
   end
 
   def new
-
   end
 
   def create
-    Shelter.create(shelter_params)
+    new_shelter = Shelter.create(shelter_params)
+    redirect_to "/shelters"
+  end
+
+  def edit
+    @shelter = Shelter.find(params[:id])
+  end
+
+  def update
+     updated_shelter = Shelter.find(params[:id])
+     updated_shelter.update(shelter_params)
+     redirect_to "/shelters/#{updated_shelter.id}"
+  end
+
+  def destroy
+    Shelter.destroy(params[:id])
     redirect_to '/shelters'
   end
 
   private
   def shelter_params
     params.permit(:name, :address, :city, :state, :zip)
-
   end
 end
