@@ -2,8 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "shelter id page", type: :feature do
   it "can see all info for specific shelter id" do
-    shelter_1 = Shelter.create(id: 1,
-                             name: "Happy Hills Shelter",
+    shelter_1 = Shelter.create(name: "Happy Hills Shelter",
                           address: "1234 Miracle St.",
                              city: "Denver",
                             state: "CO",

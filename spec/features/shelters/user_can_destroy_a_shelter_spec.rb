@@ -13,6 +13,7 @@ RSpec.describe "As a visitor" do
 
     visit "/shelters/#{happy_hills.id}"
 
+    expect(page).to have_button('Delete')
     click_on 'Delete'
 
     expect(current_path).to eq('/shelters')

@@ -21,7 +21,8 @@ RSpec.describe 'Create New Shelter' do
         new_shelter = Shelter.last
 
         expect(current_path).to eq("/shelters")
-        expect(page).to have_content('Megan')
+        expect(page).to have_content("#{new_shelter.name}")
+      
       end
     end
   end

@@ -5,4 +5,8 @@
     Description: <%= @pet.description %>
     Approx. Age: <%= @pet.approx_age %> <br>
     Sex: <%= @pet.sex %> <br>
+    Shelter: <%= @pet.shelter_name %>
     Adoption Status: <%= @pet.status %></p>
+
+    <%= button_to "Update Pet", "/pets/#{@pet.id}/edit", method: :get %>
+    <%= button_to "Delete Pet", "/pets/#{@pet.id}", method: :delete %>

@@ -213,7 +213,7 @@ Then I see each Pet in the system including the Pet's:
 ```
 
 ```
-[X] done
+[x] done
 
 User Story 8, Shelter Pets Index
 
@@ -227,7 +227,7 @@ Then I see each Pet that can be adopted from that Shelter with that shelter_id i
 ```
 
 ```
-[x] done
+[X] done
 
 User Story 9, Pet Show
 
@@ -243,7 +243,7 @@ Then I see the pet with that id including the pet's:
 ```
 
 ```
-[ ] done
+[X] done
 
 User Story 10, Shelter Pet Creation
 
@@ -266,7 +266,7 @@ and I am redirected to the Shelter Pets Index page where I can see the new pet l
 ```
 
 ```
-[ ] done
+[x] done
 
 User Story 11, Pet Update
 
@@ -287,7 +287,7 @@ and I am redirected to the Pet Show page where I see the Pet's updated informati
 ```
 
 ```
-[ ] done
+[x] done
 
 User Story 12, Pet Delete
 

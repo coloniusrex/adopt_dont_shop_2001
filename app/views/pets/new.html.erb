@@ -1,0 +1,21 @@
+<h2> New Pet for <%= @current_shelter.name %> </h2>
+
+<%= form_tag '/shelters/:id/pets' do %>
+  <%= label_tag :image %>
+  <%= text_field_tag :image %><br>
+  <%= label_tag :name %>
+  <%= text_field_tag :name %><br>
+  <%= label_tag :approx_age %>
+  <%= text_field_tag :approx_age %><br>
+  <%= label_tag :sex %>
+  <%= text_field_tag :sex %><br>
+  <%= label_tag :description %>
+  <%= text_field_tag :description %>
+
+  <%= hidden_field_tag 'status', "Adoptable" %>
+  <%= hidden_field_tag 'shelter_id', @current_shelter.id %>
+  <%= hidden_field_tag 'shelter_name', @current_shelter.name %>
+
+
+  <%= submit_tag 'Create Pet' %>
+<% end %>

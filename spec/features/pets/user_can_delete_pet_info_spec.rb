@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe "View All Pets" do
-  it "As a user I can view all pets" do
+RSpec.describe 'As a user' do
+  it 'I can delete a pet by clicking Delete' do
     happy_hills = Shelter.create(name:"Happy Hills",
     address: "300 Street")
     golden_valley = Shelter.create(name: "Sunny Valley",
@@ -13,16 +13,12 @@ RSpec.describe "View All Pets" do
     shelter_name: "Golden Valley", description: "Good boy", status: "Adoptable",
     shelter_id: "#{golden_valley.id}")
 
-    visit '/pets'
+    visit "/pets/#{pet_1.id}"
+
+    expect(page).to have_button('Delete Pet')
+    click_on 'Delete Pet'
 
     expect(current_path).to eq('/pets')
-    expect(page).to have_content("#{pet_1.name}")
-    expect(page).to have_content("Age: #{pet_1.approx_age}")
-    expect(page).to have_content("Sex: #{pet_1.sex}")
-    expect(page).to have_content("Sheltered At: #{pet_1.shelter_name}")
-    expect(page).to have_content("#{pet_2.name}")
-    expect(page).to have_content("Age: #{pet_2.approx_age}")
-    expect(page).to have_content("Sex: #{pet_2.sex}")
-    expect(page).to have_content("Sheltered At: #{pet_2.shelter_name}")
+    expect(page).to_not have_content("#{pet_1.name}")
   end
 end
