@@ -9,7 +9,8 @@ class SheltersController < ApplicationController
 
   def show_pets
     @shelter = Shelter.find(params[:id])
-    @pets_at_shelter = Pet.where(shelter_id: params[:id])
+    pets_at_shelter = Pet.where(shelter_id: params[:id])
+    @sorted_pets = pets_at_shelter.sort{ |a, b| a.status <=> b.status}
   end
 
   def new

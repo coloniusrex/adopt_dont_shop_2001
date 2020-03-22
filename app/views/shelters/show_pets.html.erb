@@ -1,10 +1,22 @@
- <h2> <%= @shelter.name %> - ID:<%= @shelter.id %> <br> Pets Index </h2>
+<%= link_to 'Pets Index', '/pets' %>
+<%= link_to 'Shelters Index', '/shelters' %>
 
- <% @pets_at_shelter.each do |pet| %>
+ <h2> <%= link_to @shelter.name, "/shelters/#{@shelter.id}" %> - ID:<%= @shelter.id %>
+   <br> Pets At Shelters: <%= @sorted_pets.count %></h2>
+
+ <% @sorted_pets.each do |pet| %>
   <p> <% pet.image %> <br>
-    <%= pet.name %><br>
+    Pet Name: <%= link_to pet.name, "/pets/#{pet.id}" %><br>
     <%= pet.approx_age %> <br>
     <%= pet.sex %> </p>
- <% end %>
+    <% if pet.status = "Adoptable" %>
+      <%= link_to 'Change to Adoption-Pending', "pets/#{pet.id}/pending", method: :patch%>
+      <% else %>
+      <%= link_to 'Change to Adoptable', "/pets/#{pet.id}/adoptable", method: :patch%>
+      <% end %><br>
+    <%= link_to 'Update Pet', "/pets/#{pet.id}/edit", method: :get %>
+    <%= link_to 'Delete Pet', "/pet/#{pet.id}", method: :delete %>
+ <% end %><br>
 
- <%= link_to 'Create Pet', "/shelters/#{@shelter.id}/pets/new" %>
+
+ <br><%= link_to 'Create Pet', "/shelters/#{@shelter.id}/pets/new" %>

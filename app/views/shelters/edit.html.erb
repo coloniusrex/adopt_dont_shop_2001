@@ -1,6 +1,9 @@
+<%= link_to 'Pets Index', '/pets' %>
+<%= link_to 'Shelters Index', '/shelters' %>
+
 <h1> Edit Shelter Info </h1>
 <h2> Current Info: </h2>
-  <p><%= @shelter.name %><br>
+  <p><%= link_to @shelter.name, "/shelters/#{@shelter.id}" %><br>
     <%= @shelter.address %><br>
     <%= @shelter.city %>, <%= @shelter.state %>, <%= @shelter.zip %></p>
 

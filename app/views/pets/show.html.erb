@@ -1,7 +1,10 @@
-<h2> Name: <%= @pet.name %> - ID: <%= @pet.id %> </h2>
+<%= link_to 'Pets Index', '/pets' %>
+<%= link_to 'Shelters Index', '/shelters' %>
+
+<h2> Name: <%= link_to @pet.name, "/pets/#{@pet.id}" %> - ID: <%= @pet.id %> </h2>
 
 <p> <%= @pet.image %> <br>
-    Name: <%= @pet.name %> <br>
+    Name: <%= link_to @pet.name, "/pets/#{@pet.id}" %> <br>
     Description: <%= @pet.description %>
     Approx. Age: <%= @pet.approx_age %> <br>
     Sex: <%= @pet.sex %> <br>

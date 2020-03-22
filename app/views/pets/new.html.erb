@@ -1,4 +1,8 @@
-<h2> New Pet for <%= @current_shelter.name %> </h2>
+<%= link_to 'Pets Index', '/pets' %>
+<%= link_to 'Shelters Index', '/shelters' %>
+
+<h2> New Pet for <%= link_to @current_shelter.name,
+                  "/shelters/#{@current_shelter.id}" %> </h2>
 
 <%= form_tag '/shelters/:id/pets' do %>
   <%= label_tag :image %>

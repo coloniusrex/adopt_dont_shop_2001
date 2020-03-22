@@ -31,6 +31,14 @@ class PetsController < ApplicationController
     redirect_to '/pets'
   end
 
+  def adoptable
+    require "pry"; binding.pry
+  end
+
+  def pending
+    require "pry"; binding.pry
+  end
+
   private
   def pet_params
     params.permit(:id, :image, :name, :description,
